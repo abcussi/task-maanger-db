@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:latest  # Usa la última imagen de MongoDB
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: examplepassword
+      MONGO_INITDB_DATABASE: mydatabase  # Nombre de la base de datos inicial
+    ports:
+      - "27017:27017"  # Expone el puerto 27017 en el host
+    volumes:
+      - mongo-data:/data/db  # Monta un volumen para persistir los datos
+
+volumes:
+  mongo-data:  # Define el volumen para la base de datos
+
+  
